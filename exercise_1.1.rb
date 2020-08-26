@@ -13,7 +13,7 @@ print 'Ваше имя: '
 usr_name = gets.chomp.to_s
 
 print 'Ваш рост:  '
-usr_height = gets.chomp.to_i
+usr_height = gets.chomp.to_f
 
 # выводит результат пользователю на экран с обращением по имени
 
