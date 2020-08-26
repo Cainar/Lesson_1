@@ -4,23 +4,25 @@
 
 puts "Введите три коэффициента"
 
-arr = Array.new()
-
 print "a: "
-arr << gets.chomp.to_f
+a =  gets.chomp.to_f
 print "b: "
-arr << gets.chomp.to_f
+b = gets.chomp.to_f
 print "c: "
-arr << gets.chomp.to_f
+c = gets.chomp.to_f
 
 # находим корни уравнения
 
-d = arr[1]**2 - (4 * arr[0] * arr[2])
+d = b**2 - (4 * a * c)
+
+d >= 0 ? sqrt_d = Math.sqrt(d) : nil
 
 if d > 0
-    puts "Дискриминант: #{d}. x1: #{(- arr[1] + Math.sqrt(d))/(arr[0] * 2)}, x2: #{(- arr[1] - Math.sqrt(d))/(arr[0] * 2)}"
+    puts "Дискриминант: #{d}."
+    puts "x1: #{((- b + sqrt_d)/(a * 2))};"
+    puts "x2: #{((- b - sqrt_d)/(a * 2))}."
 elsif d == 0
-    puts "Дискриминант: #{d}. x1 = x2: #{(- arr[1])/(arr[0] * 2)}"
+    puts "Дискриминант: #{d}. x1 = x2: #{((- b)/(a * 2))}"
 else
     puts "Дискриминант: #{d}. Корней нет."
 end

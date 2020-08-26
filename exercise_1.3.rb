@@ -8,7 +8,7 @@
 # равнобедренный и равносторонний, но не прямоугольный.
 
 # Создаем массив из сторон треугольника
-side_arr = Array.new()
+side_arr = []
 
 print 'Сторона a: '
 side_arr << gets.chomp.to_f
@@ -17,17 +17,17 @@ side_arr << gets.chomp.to_f
 print 'Сторона c: '
 side_arr << gets.chomp.to_f
 
-side_arr.sort!
+x, y, hyp = side_arr.sort
 
 
-if side_arr[0] == side_arr[1] and side_arr[0] == side_arr[2]
+if x == y and x == hyp
   puts "Треугольник равносторонний"
-elsif side_arr[0] == side_arr[1] or side_arr[0] == side_arr[2] or side_arr[1] == side_arr[2]
+elsif x == y or x == hyp or y == hyp
   puts "Треугольник равнобедренный"
-elsif side_arr[2]**2 == side_arr[0]**2 + side_arr[1]**2
+elsif hyp**2 == x**2 + y**2
   puts "Треугольник прямоугольный"
 else
-  puts "Миша, всё х-ня, давай по-новому!"
+  puts "Треугольник не явдляется р/с, р/б и прямоугольным"
 end
 
 
